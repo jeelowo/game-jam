@@ -15,7 +15,6 @@ func Physics_Update(delta: float):
 	# player movement
 	direction = Input.get_vector("move_left","move_right","move_up","move_down")
 	player.velocity = direction * move_speed
-	print(player.velocity)
 	player.move_and_slide()
 
 	# player face walk direction

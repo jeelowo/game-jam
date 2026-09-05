@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cambu34yascfb" path="res://Assets/Sprites/Player Sprites/_up walk.png" id="5_8erm5"]
 [ext_resource type="Script" uid="uid://q5rdg8k30kw" path="res://Scripts/walk State.gd" id="5_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://8kp5muk2y7jw" path="res://Scenes/flashlight.tscn" id="9_f1ek2"]
+[ext_resource type="Script" uid="uid://d0jwe3uxbvaih" path="res://Scripts/player_manager.gd" id="12_pu2lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("2_fkybt")
@@ -309,4 +310,9 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="Flashlight" parent="." unique_id=599871088 instance=ExtResource("9_f1ek2")]
-position = Vector2(0, -51)
+position = Vector2(2, -20)
+energy = 0.64
+script = null
+
+[node name="Player Manager" type="Node2D" parent="." unique_id=858811013]
+script = ExtResource("12_pu2lt")

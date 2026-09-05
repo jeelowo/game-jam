@@ -1,18 +1,25 @@
 [gd_scene format=3 uid="uid://8kp5muk2y7jw"]
 
 [sub_resource type="Gradient" id="Gradient_6vuth"]
-offsets = PackedFloat32Array(0.17548077, 0.75, 0.7916667, 0.8333333, 0.8541667, 0.8958333, 0.9375)
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.2769103, 0.2769103, 0.2769103, 1, 0.41536528, 0.41536528, 0.41536528, 1, 0.41568628, 0.41568628, 0.41568628, 1, 0.27712432, 0.27712432, 0.27712432, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0.104166664, 0.125, 0.8541667, 0.875)
+colors = PackedColorArray(0.27712432, 0.27712432, 0.27712432, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27712432, 0.27712432, 0.27712432, 1)
 metadata/_snap_enabled = true
 metadata/_snap_count = 48
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_g4v7s"]
 gradient = SubResource("Gradient_6vuth")
 width = 256
-height = 150
+height = 256
 fill = 3
-fill_from = Vector2(0.5, 0.75)
-fill_to = Vector2(1, 0.4249147)
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+
+[sub_resource type="GDScript" id="GDScript_b0acp"]
+script/source = "extends PointLight2D
+"
 
 [node name="Flashlight" type="PointLight2D" unique_id=599871088]
+scale = Vector2(3, 3)
+energy = 3.83
 texture = SubResource("GradientTexture2D_g4v7s")
+script = SubResource("GDScript_b0acp")
