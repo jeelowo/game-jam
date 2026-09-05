@@ -61,15 +61,14 @@ position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"Idle Down"
 autoplay = "Idle Down"
-frame_progress = 0.6851946
+frame_progress = 0.80879843
 
 [node name="Player CollisionShape" type="CollisionShape2D" parent="." unique_id=1070902704]
 shape = SubResource("CapsuleShape2D_g4v7s")
 
-[node name="State Machine" type="Node2D" parent="." unique_id=2035266559 node_paths=PackedStringArray("initial_state")]
+[node name="State Machine" type="Node2D" parent="." unique_id=2035266559]
 position = Vector2(0, -13)
 script = ExtResource("3_x3wgy")
-initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node2D" parent="State Machine" unique_id=1390156607]
 script = ExtResource("4_fkybt")
@@ -80,4 +79,3 @@ script = ExtResource("5_x3wgy")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=142287849]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
-rotation_smoothing_enabled = true

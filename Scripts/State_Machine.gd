@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 	if current_state:
 		current_state.Update(delta)
 
-func 	_physics_process(delta: float):
+func _physics_process(delta: float):
 	if current_state:
 		current_state.Physics_Update(delta)
 
