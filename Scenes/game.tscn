@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://b0v8iryu7kv4r"]
 
 [ext_resource type="PackedScene" uid="uid://oy67rn0cumj3" path="res://Scenes/player.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://samomqwvsrtp" path="res://Scenes/placeholer_map.tscn" id="2_qxrlw"]
 
 [node name="Game" type="Node2D" unique_id=464600818]
+
+[node name="Map" parent="." unique_id=1015687053 instance=ExtResource("2_qxrlw")]
 
 [node name="Player" parent="." unique_id=1857629509 instance=ExtResource("1_ebmjs")]

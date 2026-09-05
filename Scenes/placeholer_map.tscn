@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://samomqwvsrtp"]
+
+[ext_resource type="Texture2D" uid="uid://dileexqpvhfhi" path="res://Assets/Sprites/Player Sprites/_up attack.png" id="1_kqi8y"]
+
+[node name="Map" type="Node2D" unique_id=1015687053]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2093083785]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1776463973]
+position = Vector2(261, 154.00003)
+scale = Vector2(12.886719, 9.277344)
+texture = ExtResource("1_kqi8y")
