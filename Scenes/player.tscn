@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://oy67rn0cumj3"]
+
+[ext_resource type="Script" uid="uid://ek06d65x3iuq" path="res://Scripts/player.gd" id="1_vgqql"]
+[ext_resource type="Texture2D" uid="uid://cbxk3p21nyi3x" path="res://Assets/Sprites/Player Sprites/_down idle.png" id="2_fkybt"]
+[ext_resource type="Script" uid="uid://c2vuxccs6p4fc" path="res://Scripts/State_Machine.gd" id="3_x3wgy"]
+[ext_resource type="Script" uid="uid://643xmijn1g2x" path="res://Scripts/idle state.gd" id="4_fkybt"]
+[ext_resource type="Script" uid="uid://q5rdg8k30kw" path="res://Scripts/walk State.gd" id="5_x3wgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("2_fkybt")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}],
+"loop": 1,
+"name": &"Idle Down",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 4.0
+height = 8.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1857629509]
+script = ExtResource("1_vgqql")
+
+[node name="Player Sprite" type="AnimatedSprite2D" parent="." unique_id=1510879965]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"Idle Down"
+autoplay = "Idle Down"
+frame_progress = 0.43548623
+
+[node name="Player CollisionShape" type="CollisionShape2D" parent="." unique_id=1070902704]
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="State Machine" type="Node2D" parent="." unique_id=2035266559]
+position = Vector2(0, -13)
+script = ExtResource("3_x3wgy")
+
+[node name="Idle" type="Node2D" parent="State Machine" unique_id=1390156607]
+script = ExtResource("4_fkybt")
+
+[node name="Walk" type="Node2D" parent="State Machine" unique_id=1711896724]
+script = ExtResource("5_x3wgy")
