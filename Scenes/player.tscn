@@ -3,11 +3,14 @@
 [ext_resource type="Script" uid="uid://ek06d65x3iuq" path="res://Scripts/player.gd" id="1_vgqql"]
 [ext_resource type="Texture2D" uid="uid://cbxk3p21nyi3x" path="res://Assets/Sprites/Player Sprites/_down idle.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://ckipn8p15roxj" path="res://Assets/Sprites/Player Sprites/_down walk.png" id="3_3smsa"]
+[ext_resource type="Texture2D" uid="uid://cpsoog7lqa3v5" path="res://Assets/Sprites/Player Sprites/_side idle.png" id="3_gymyn"]
 [ext_resource type="Script" uid="uid://c2vuxccs6p4fc" path="res://Scripts/State_Machine.gd" id="3_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://644xk2q6n4lg" path="res://Assets/Sprites/Player Sprites/_side walk.png" id="4_8erm5"]
 [ext_resource type="Script" uid="uid://643xmijn1g2x" path="res://Scripts/idle state.gd" id="4_fkybt"]
+[ext_resource type="Texture2D" uid="uid://dntwytsf2lkgi" path="res://Assets/Sprites/Player Sprites/_up idle.png" id="4_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://cambu34yascfb" path="res://Assets/Sprites/Player Sprites/_up walk.png" id="5_8erm5"]
 [ext_resource type="Script" uid="uid://q5rdg8k30kw" path="res://Scripts/walk State.gd" id="5_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://8kp5muk2y7jw" path="res://Scenes/flashlight.tscn" id="9_f1ek2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
 atlas = ExtResource("2_fkybt")
@@ -27,6 +30,46 @@ region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
 atlas = ExtResource("2_fkybt")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfarp"]
+atlas = ExtResource("3_gymyn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6uwr"]
+atlas = ExtResource("3_gymyn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83xs0"]
+atlas = ExtResource("3_gymyn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypfnu"]
+atlas = ExtResource("3_gymyn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuaoq"]
+atlas = ExtResource("3_gymyn")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wohnl"]
+atlas = ExtResource("4_pu2lt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36dho"]
+atlas = ExtResource("4_pu2lt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yh6i2"]
+atlas = ExtResource("4_pu2lt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv4vc"]
+atlas = ExtResource("4_pu2lt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gxox"]
+atlas = ExtResource("4_pu2lt")
 region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
@@ -125,6 +168,46 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vfarp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6uwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83xs0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ypfnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xuaoq")
+}],
+"loop": 1,
+"name": &"Idle Side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wohnl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36dho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yh6i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv4vc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gxox")
+}],
+"loop": 1,
+"name": &"Idle Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_f1ek2")
 }, {
 "duration": 1.0,
@@ -203,7 +286,7 @@ script = ExtResource("1_vgqql")
 [node name="Player Sprite" type="AnimatedSprite2D" parent="." unique_id=1510879965]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"Walk Side"
+animation = &"Idle Up"
 autoplay = "Idle Down"
 
 [node name="Player CollisionShape" type="CollisionShape2D" parent="." unique_id=1070902704]
@@ -221,6 +304,9 @@ script = ExtResource("4_fkybt")
 script = ExtResource("5_x3wgy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=142287849]
-zoom = Vector2(2, 2)
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
+
+[node name="Flashlight" parent="." unique_id=599871088 instance=ExtResource("9_f1ek2")]
+position = Vector2(0, -51)

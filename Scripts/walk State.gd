@@ -5,6 +5,7 @@ class_name playerWalk
 @onready var player_sprite: AnimatedSprite2D = $"../../Player Sprite"
 
 @export var move_speed := 50.0
+var last_facing_direction := Vector2(0,0)
 var direction : Vector2
 
 func Enter():
@@ -30,6 +31,9 @@ func Physics_Update(delta: float):
 	elif direction == Vector2.RIGHT:
 		player_sprite.play("Walk Side")
 		player_sprite.flip_h = true
+
+	if direction != Vector2(0,0):
+		last_facing_direction = direction
 
 	# Transitions
 	if direction == Vector2(0,0):
