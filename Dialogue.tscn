@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bn7jgvq623tvf"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1567002143]
+
+[node name="Control" type="Control" parent="." unique_id=925005760]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextEdit" type="TextEdit" parent="Control" unique_id=893653188]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "sssssssssssssssssssssssssssssssssssssssssssssssssssss"
+placeholder_text = "ssssssssssssssssssssss"
+
+[node name="Label" type="Label" parent="Control/TextEdit" unique_id=376415500]
+layout_mode = 0
+offset_top = 138.0
+offset_right = 800.0
+offset_bottom = 161.0
+text = "addadaa"

@@ -304,13 +304,15 @@ script = ExtResource("4_fkybt")
 [node name="Walk" type="Node2D" parent="State Machine" unique_id=1711896724]
 script = ExtResource("5_x3wgy")
 
+[node name="Interact" type="Node2D" parent="State Machine" unique_id=510907701]
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=142287849]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="Flashlight" parent="." unique_id=599871088 instance=ExtResource("9_f1ek2")]
-position = Vector2(2, -20)
+position = Vector2(-4, -9)
 energy = 0.64
 script = null
 
