@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://nwbr6s4dk4vf"]
+
+[ext_resource type="Texture2D" uid="uid://b4g8e826mdcm" path="res://Assets/Sprites/Background/Horror BG.jpg" id="1_28flt"]
+
+[node name="Main Menu" type="Control" unique_id=2128308105]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1129330456]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -76.00003
+offset_top = 1.0000019
+offset_right = 364.0
+offset_bottom = 143.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.785, 0.785)
+texture = ExtResource("1_28flt")
+
+[node name="Button Container" type="HBoxContainer" parent="." unique_id=633910702]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -156.0
+offset_bottom = -81.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.1, 0)
+offset_transform_enabled = true
+theme_override_constants/separation = 70
+alignment = 1
+
+[node name="New Game" type="Button" parent="Button Container" unique_id=719837710]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "New Game"
+
+[node name="Continue" type="Button" parent="Button Container" unique_id=704245108]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Continue"
+
+[node name="Options" type="Button" parent="Button Container" unique_id=2094899519]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Options"

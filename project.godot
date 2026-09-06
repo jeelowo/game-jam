@@ -11,15 +11,16 @@ config_version=5
 [application]
 
 config/name="Game Jam"
-run/main_scene="uid://b0v8iryu7kv4r"
+run/main_scene="uid://nwbr6s4dk4vf"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
+window/size/viewport_width=960
+window/size/viewport_height=720
+window/size/resizable=false
+window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

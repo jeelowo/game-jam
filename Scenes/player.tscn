@@ -307,7 +307,7 @@ script = ExtResource("5_x3wgy")
 [node name="Interact" type="Node2D" parent="State Machine" unique_id=510907701]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=142287849]
-zoom = Vector2(4, 4)
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
