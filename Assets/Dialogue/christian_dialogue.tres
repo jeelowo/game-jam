@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://cy1ge0cbbeau0"]
+
+[ext_resource type="Script" uid="uid://c4sfujko7r1pq" path="res://Assets/Dialogue/dialogue_line.gd" id="1_qfr2b"]
+[ext_resource type="Script" uid="uid://dwu0lv6rm63je" path="res://Assets/Dialogue/dialogue.gd" id="1_qisq5"]
+
+[sub_resource type="Resource" id="Resource_qfr2b"]
+script = ExtResource("1_qfr2b")
+speaker = "Christian"
+text = "Im Diff"
+metadata/_custom_type_script = "uid://c4sfujko7r1pq"
+
+[sub_resource type="Resource" id="Resource_qisq5"]
+script = ExtResource("1_qfr2b")
+speaker = "Christian"
+text = "Putangina mo"
+metadata/_custom_type_script = "uid://c4sfujko7r1pq"
+
+[sub_resource type="Resource" id="Resource_noiuf"]
+script = ExtResource("1_qfr2b")
+speaker = "Psalm"
+text = "Ulol Pak u"
+metadata/_custom_type_script = "uid://c4sfujko7r1pq"
+
+[resource]
+script = ExtResource("1_qisq5")
+lines = Array[ExtResource("1_qfr2b")]([SubResource("Resource_qfr2b"), SubResource("Resource_qisq5"), SubResource("Resource_noiuf")])
+metadata/_custom_type_script = "uid://dwu0lv6rm63je"
