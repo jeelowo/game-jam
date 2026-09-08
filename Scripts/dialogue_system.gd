@@ -4,24 +4,39 @@ const CHRISTIAN_DIALOGUE = preload("uid://cy1ge0cbbeau0")
 @onready var rich_text_label: RichTextLabel = $Panel/VBoxContainer/RichTextLabel
 
 var is_typing := false
+var line_num : int
+var current_dialogue : Dialogue
 @export var text_speed = 0.1
 
 func _ready() -> void:
 	start_dialogue(CHRISTIAN_DIALOGUE)
+	line_num = 0
 
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("speed up"):
+func _process(_delta: float) -> void:
+	# speed up text when holding space ✅
+	if Input.is_action_pressed("continue"):
 		text_speed = 0.05
-	elif Input.is_action_just_released("speed up"):
+	elif Input.is_action_just_released("continue"):
 		text_speed = 0.1
 
-func start_dialogue(dialogue: Dialogue):
-	is_typing = true
-	type_dialogue_line(dialogue)
+	# proceed to next dialogue line ✅
+	if !is_typing and Input.is_action_just_pressed("continue"):
+		rich_text_label.text = ""
+		line_num += 1
+		is_typing = true
+		type_dialogue_line(current_dialogue)
+		print("next line")
 
+# starts a the parameter dialogue ✅
+func start_dialogue(dialogue: Dialogue):
+	current_dialogue = dialogue
+	is_typing = true
+	type_dialogue_line(current_dialogue)
+
+# starts a the parameter dialogue ✅
 func type_dialogue_line(dialogue: Dialogue):
-	for letter in dialogue.lines[0].text:
-		print(letter)
+	# appends each letter in dialogue line to label
+	for letter in dialogue.lines[line_num].text:
 		if is_typing:
 			rich_text_label.append_text(letter)
 			# Skip whitespaces
