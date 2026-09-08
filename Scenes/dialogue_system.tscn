@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://wlpakgqngkkp"]
 
+[ext_resource type="Script" uid="uid://cenmcbr356srj" path="res://Scripts/dialogue_system.gd" id="1_b43ja"]
 [ext_resource type="FontFile" uid="uid://jgyci76yybj4" path="res://Assets/Fonts/DeterminationSansWebRegular-369X.ttf" id="2_tgreg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r12a2"]
@@ -16,6 +17,7 @@ expand_margin_bottom = 2.0
 
 [node name="Dialogue System" type="Node2D" unique_id=441250200]
 z_index = 4096
+script = ExtResource("1_b43ja")
 
 [node name="Panel" type="Panel" parent="." unique_id=192442121]
 offset_right = 288.0

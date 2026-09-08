@@ -6,7 +6,7 @@
 [sub_resource type="Resource" id="Resource_qfr2b"]
 script = ExtResource("1_qfr2b")
 speaker = "Christian"
-text = "Im Diff"
+text = "Im Diff YOU FUCKING BIGHT ASS STUPID sON OF A BITCH"
 metadata/_custom_type_script = "uid://c4sfujko7r1pq"
 
 [sub_resource type="Resource" id="Resource_qisq5"]
@@ -21,7 +21,13 @@ speaker = "Psalm"
 text = "Ulol Pak u"
 metadata/_custom_type_script = "uid://c4sfujko7r1pq"
 
+[sub_resource type="Resource" id="Resource_b8f87"]
+script = ExtResource("1_qfr2b")
+speaker = "Liam"
+text = "bobo mo Christian"
+metadata/_custom_type_script = "uid://c4sfujko7r1pq"
+
 [resource]
 script = ExtResource("1_qisq5")
-lines = Array[ExtResource("1_qfr2b")]([SubResource("Resource_qfr2b"), SubResource("Resource_qisq5"), SubResource("Resource_noiuf")])
+lines = Array[ExtResource("1_qfr2b")]([SubResource("Resource_qfr2b"), SubResource("Resource_qisq5"), SubResource("Resource_noiuf"), SubResource("Resource_b8f87")])
 metadata/_custom_type_script = "uid://dwu0lv6rm63je"

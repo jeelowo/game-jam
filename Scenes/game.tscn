@@ -2,9 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://oy67rn0cumj3" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://samomqwvsrtp" path="res://Scenes/placeholer_map.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://wlpakgqngkkp" path="res://Scenes/dialogue_system.tscn" id="3_wrm1d"]
 
 [node name="Game" type="Node2D" unique_id=464600818]
 
 [node name="Map" parent="." unique_id=1015687053 instance=ExtResource("2_qxrlw")]
 
 [node name="Player" parent="." unique_id=1857629509 instance=ExtResource("1_ebmjs")]
+
+[node name="Dialogue System" parent="." unique_id=441250200 instance=ExtResource("3_wrm1d")]
+position = Vector2(-143, 50)
