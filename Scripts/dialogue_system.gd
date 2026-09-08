@@ -1,7 +1,8 @@
 extends Node2D
 
 const CHRISTIAN_DIALOGUE = preload("uid://cy1ge0cbbeau0")
-@onready var rich_text_label: RichTextLabel = $Panel/VBoxContainer/RichTextLabel
+@onready var line_label: RichTextLabel = $"Line Panel/VBoxContainer/Line Label"
+@onready var name_label: RichTextLabel = $"Name Panel/Name Label"
 
 var is_typing := false
 var line_num : int
@@ -21,9 +22,10 @@ func _process(_delta: float) -> void:
 
 	# proceed to next dialogue line ✅
 	if !is_typing and Input.is_action_just_pressed("continue"):
-		rich_text_label.text = ""
+		line_label.text = ""
 		line_num += 1
 		is_typing = true
+		name_label.text = current_dialogue.lines[line_num].speaker
 		type_dialogue_line(current_dialogue)
 		print("next line")
 
@@ -31,6 +33,7 @@ func _process(_delta: float) -> void:
 func start_dialogue(dialogue: Dialogue):
 	current_dialogue = dialogue
 	is_typing = true
+	name_label.text = current_dialogue.lines[line_num].speaker
 	type_dialogue_line(current_dialogue)
 
 # starts a the parameter dialogue ✅
@@ -38,7 +41,7 @@ func type_dialogue_line(dialogue: Dialogue):
 	# appends each letter in dialogue line to label
 	for letter in dialogue.lines[line_num].text:
 		if is_typing:
-			rich_text_label.append_text(letter)
+			line_label.append_text(letter)
 			# Skip whitespaces
 			if letter != " ":
 				await get_tree().create_timer(text_speed).timeout
