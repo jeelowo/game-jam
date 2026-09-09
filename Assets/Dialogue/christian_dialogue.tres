@@ -5,26 +5,26 @@
 
 [sub_resource type="Resource" id="Resource_qfr2b"]
 script = ExtResource("1_qfr2b")
-speaker = "Christian"
-text = "NEIL RM X ZENKER KISSING SCENE NEIL RM X ZENKER KISSING SCENE"
+speaker = "*"
+text = "Despite everything, it's still you."
 metadata/_custom_type_script = "uid://c4sfujko7r1pq"
 
 [sub_resource type="Resource" id="Resource_qisq5"]
 script = ExtResource("1_qfr2b")
 speaker = "Christian"
-text = "Putangina mo Putangina mo Putangina mo Putangina mo Putangina mo Putangina mo"
+text = "Putangina mo"
 metadata/_custom_type_script = "uid://c4sfujko7r1pq"
 
 [sub_resource type="Resource" id="Resource_noiuf"]
 script = ExtResource("1_qfr2b")
 speaker = "Psalm"
-text = "Ulol Pak u VUlol Pak u Ulol Pak u VUlol Pak uUlol Pak u VUlol Pak uUlol Pak u VUlol Pak u"
+text = "Ulol Pak u "
 metadata/_custom_type_script = "uid://c4sfujko7r1pq"
 
 [sub_resource type="Resource" id="Resource_b8f87"]
 script = ExtResource("1_qfr2b")
 speaker = "Liam"
-text = "bobo mo Christianbobo mo Christianbobo mo Christianbobo mo Christianbobo mo Christianbobo mo Christian"
+text = "bobo mo Christian"
 metadata/_custom_type_script = "uid://c4sfujko7r1pq"
 
 [resource]

@@ -21,7 +21,8 @@ func _process(_delta: float) -> void:
 		text_speed = 0.1
 
 	# proceed to next dialogue line ✅
-	if !is_typing and Input.is_action_just_pressed("continue"):
+	if !is_typing and Input.is_action_just_pressed("continue") and line_num < current_dialogue.lines.size()-1:
+		print(current_dialogue.lines.size())
 		line_label.text = ""
 		line_num += 1
 		is_typing = true
