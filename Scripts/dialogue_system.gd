@@ -7,9 +7,9 @@ const CHRISTIAN_DIALOGUE = preload("uid://cy1ge0cbbeau0")
 var is_typing := false
 var line_num : int
 var current_dialogue : Dialogue
-@export var text_speed = 0.04
+@export var text_speed = 0.0767
 var base_speed = text_speed
-@export var speed_up_mult = 0.5
+@export var speed_up_mult = 0.8
 
 func _ready() -> void:
 	start_dialogue(CHRISTIAN_DIALOGUE)
@@ -43,20 +43,22 @@ func start_dialogue(dialogue: Dialogue):
 
 # starts a the parameter dialogue ✅
 func type_dialogue_line(dialogue: Dialogue):
-	# appends each letter in dialogue line to label
-	for letter in dialogue.lines[line_num].text:
+	for i in dialogue.lines[line_num].text.length():
+		var letter = dialogue.lines[line_num].text[i]
+
 		if is_typing:
 			line_label.append_text(letter)
 			print(letter)
-			# Skip whitespaces
+
 			if letter == ".":
-				await get_tree().create_timer(text_speed*20).timeout
+				if i == dialogue.lines[line_num].text.length() - 1:
+					await get_tree().create_timer(text_speed * 2).timeout
+				else:
+					await get_tree().create_timer(text_speed * 14).timeout
 			elif letter == "," or letter == "!":
-				await get_tree().create_timer(text_speed*10).timeout
+				await get_tree().create_timer(text_speed * 7).timeout
 			elif letter != " ":
 				await get_tree().create_timer(text_speed).timeout
-
-			# pause for punctuation mark
 
 	# runs when done typing
 	is_typing = false
