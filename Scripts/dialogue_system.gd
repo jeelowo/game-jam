@@ -7,7 +7,9 @@ const CHRISTIAN_DIALOGUE = preload("uid://cy1ge0cbbeau0")
 var is_typing := false
 var line_num : int
 var current_dialogue : Dialogue
-@export var text_speed = 0.1
+@export var text_speed = 0.04
+var base_speed = text_speed
+@export var speed_up_mult = 0.5
 
 func _ready() -> void:
 	start_dialogue(CHRISTIAN_DIALOGUE)
@@ -15,10 +17,12 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	# speed up text when holding space ✅
-	if Input.is_action_pressed("continue"):
-		text_speed = 0.05
+	if Input.is_action_just_pressed("continue"):
+		text_speed = base_speed * speed_up_mult
+		print(text_speed)
 	elif Input.is_action_just_released("continue"):
-		text_speed = 0.1
+		text_speed = base_speed
+		print(text_speed)
 
 	# proceed to next dialogue line ✅
 	if !is_typing and Input.is_action_just_pressed("continue") and line_num < current_dialogue.lines.size()-1:
@@ -43,9 +47,16 @@ func type_dialogue_line(dialogue: Dialogue):
 	for letter in dialogue.lines[line_num].text:
 		if is_typing:
 			line_label.append_text(letter)
+			print(letter)
 			# Skip whitespaces
-			if letter != " ":
+			if letter == ".":
+				await get_tree().create_timer(text_speed*20).timeout
+			elif letter == "," or letter == "!":
+				await get_tree().create_timer(text_speed*10).timeout
+			elif letter != " ":
 				await get_tree().create_timer(text_speed).timeout
+
+			# pause for punctuation mark
 
 	# runs when done typing
 	is_typing = false

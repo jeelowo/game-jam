@@ -7,8 +7,10 @@
 [node name="Game" type="Node2D" unique_id=464600818]
 
 [node name="Map" parent="." unique_id=1015687053 instance=ExtResource("2_qxrlw")]
+visible = false
 
 [node name="Player" parent="." unique_id=1857629509 instance=ExtResource("1_ebmjs")]
+visible = false
 
 [node name="Dialogue System" parent="." unique_id=441250200 instance=ExtResource("3_wrm1d")]
 position = Vector2(-143, 50)
