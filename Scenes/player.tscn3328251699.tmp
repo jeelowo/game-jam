@@ -318,5 +318,3 @@ script = null
 
 [node name="Player Manager" type="Node2D" parent="." unique_id=858811013]
 script = ExtResource("12_pu2lt")
-
-[node name="Timer" type="Timer" parent="." unique_id=1178294947]

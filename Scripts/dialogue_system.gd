@@ -48,7 +48,7 @@ func type_dialogue_line(dialogue: Dialogue):
 
 		if is_typing:
 			line_label.append_text(letter)
-			print(letter)
+			#print(letter)
 
 			if letter == ".":
 				if i == dialogue.lines[line_num].text.length() - 1:
@@ -62,4 +62,4 @@ func type_dialogue_line(dialogue: Dialogue):
 
 	# runs when done typing
 	is_typing = false
-	print("done")
+	#print("done")

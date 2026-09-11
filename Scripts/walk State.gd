@@ -3,6 +3,7 @@ class_name playerWalk
 
 @onready var player: CharacterBody2D = $"../.."
 @onready var player_sprite: AnimatedSprite2D = $"../../Player Sprite"
+@onready var camera_2d: Camera2D = $"../../Camera2D"
 
 @export var move_speed := 50.0
 var last_facing_direction := Vector2(0,0)
