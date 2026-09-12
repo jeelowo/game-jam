@@ -10,5 +10,8 @@
 
 [node name="Player" parent="." unique_id=1857629509 instance=ExtResource("1_ebmjs")]
 
-[node name="Dialogue System" parent="." unique_id=441250200 instance=ExtResource("3_wrm1d")]
-position = Vector2(-143, 50)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1698057082]
+
+[node name="Dialogue System" parent="CanvasLayer" unique_id=441250200 instance=ExtResource("3_wrm1d")]
+position = Vector2(177, 540)
+scale = Vector2(2, 2)
