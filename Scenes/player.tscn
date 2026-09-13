@@ -312,6 +312,7 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="Flashlight" parent="." unique_id=599871088 instance=ExtResource("9_f1ek2")]
+visible = false
 position = Vector2(-4, -9)
 energy = 0.64
 script = null
