@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://oy67rn0cumj3" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://samomqwvsrtp" path="res://Scenes/placeholer_map.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://wlpakgqngkkp" path="res://Scenes/dialogue_system.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://ccpcmu7vngwhg" path="res://Scenes/detection_area.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node2D" unique_id=464600818]
 
@@ -11,7 +12,10 @@
 [node name="Player" parent="." unique_id=1857629509 instance=ExtResource("1_ebmjs")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1698057082]
+visible = false
 
 [node name="Dialogue System" parent="CanvasLayer" unique_id=441250200 instance=ExtResource("3_wrm1d")]
 position = Vector2(177, 540)
 scale = Vector2(2, 2)
+
+[node name="Area2D" parent="." unique_id=55378902 instance=ExtResource("4_3dryh")]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ccpcmu7vngwhg"]
+
+[ext_resource type="Script" uid="uid://cq7yl17cjdskm" path="res://Scripts/detection_area.gd" id="1_axpad"]
+[ext_resource type="PackedScene" uid="uid://ljlblklxmqun" path="res://Scenes/pop_up.tscn" id="2_4hedk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ywbft"]
+
+[node name="Area2D" type="Area2D" unique_id=55378902]
+script = ExtResource("1_axpad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1517734533]
+shape = SubResource("CircleShape2D_ywbft")
+
+[node name="Pop up" parent="." unique_id=1091886583 instance=ExtResource("2_4hedk")]
+position = Vector2(-27, -41)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
