@@ -30,7 +30,7 @@ func _process(_delta: float) -> void:
 func look_ahead(direction):
 	var camera_pos = player.global_position + (direction * max_camera_distance)
 	var camera_direction = camera_2d.global_position.direction_to(camera_pos).normalized()
-	camera_2d.global_position += camera_direction * float(sqrt(abs(camera_2d.global_position.distance_to(camera_pos)))/2)
+	camera_2d.global_position += camera_direction * float(sqrt(abs(camera_2d.global_position.distance_to(camera_pos)))/4)
 
 func look_up_or_down():
 	if Input.is_action_just_pressed("move_up"):
