@@ -4,6 +4,7 @@ extends Node2D
 @onready var walk: playerWalk = $"../State Machine/Walk"
 @onready var player: CharacterBody2D = $".."
 @onready var camera_2d: Camera2D = $"../Camera2D"
+@onready var idle_timer: Timer = $"../Idle Timer"
 
 var camera_distance := 0.0
 @export var max_camera_distance := 100.0
@@ -26,6 +27,7 @@ func _process(_delta: float) -> void:
 		look_direction = Vector2.RIGHT
 
 	look_ahead(look_direction)
+	camera_reset()
 
 func look_ahead(direction):
 	var camera_pos = player.global_position + (direction * max_camera_distance)
@@ -37,3 +39,8 @@ func look_up_or_down():
 		look_direction = Vector2.UP
 	elif Input.is_action_just_pressed("move_down"):
 		look_direction = Vector2.DOWN
+
+func camera_reset():
+	if idle_timer.time_left <= 0.0 and not idle_timer.paused and \
+	player.global_position.distance_to(camera_2d.global_position) > 5:
+		camera_2d.global_position += (-1*(look_direction)) * 4
