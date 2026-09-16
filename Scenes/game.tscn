@@ -5,6 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://wlpakgqngkkp" path="res://Scenes/dialogue_system.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://ccpcmu7vngwhg" path="res://Scenes/detection_area.tscn" id="4_3dryh"]
 [ext_resource type="Script" uid="uid://di1tt4nn4xsaq" path="res://Scripts/game_manager.gd" id="5_wowpa"]
+[ext_resource type="Shader" uid="uid://d0g1n8jcxe5br" path="res://Scenes/game.gdshader" id="6_i6g32"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6g32"]
+shader = ExtResource("6_i6g32")
+shader_parameter/exposure = 1.0
+shader_parameter/contrast = 1.25
+shader_parameter/saturation = 0.9
+shader_parameter/enable_pixelate = true
+shader_parameter/pixel_factor = 2.0
+shader_parameter/enable_posterize = true
+shader_parameter/color_levels = 12.0
+shader_parameter/dither_strength = 0.75
+shader_parameter/chrom_aberration = 4.0
+shader_parameter/vignette_strength = 1.0
+shader_parameter/grain_strength = 0.2
+shader_parameter/tint_color = Vector3(0.95, 1.03, 0.9)
+shader_parameter/tint_strength = 0.15
+shader_parameter/viewport_size_override = Vector2(0, 0)
 
 [node name="Game" type="Node2D" unique_id=464600818]
 
@@ -33,3 +51,13 @@ text = "PAUSED"
 [node name="Game Manager" type="Node2D" parent="." unique_id=72941995]
 process_mode = 3
 script = ExtResource("5_wowpa")
+
+[node name="Post Process" type="CanvasLayer" parent="." unique_id=623269385]
+
+[node name="ColorRect" type="ColorRect" parent="Post Process" unique_id=201935895]
+material = SubResource("ShaderMaterial_i6g32")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
