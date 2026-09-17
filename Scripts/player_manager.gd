@@ -44,4 +44,4 @@ func look_up_or_down():
 func camera_reset():
 	if idle_timer.time_left <= 0.0 and not idle_timer.paused and \
 	player.global_position.distance_to(camera_2d.global_position) > 2.1:
-		camera_2d.global_position -= look_direction.normalized() * 2
+		camera_2d.global_position -= player.global_position.direction_to(camera_2d.global_position).normalized() * 2
