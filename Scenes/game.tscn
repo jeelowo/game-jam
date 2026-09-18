@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://oy67rn0cumj3" path="res://Scenes/player.tscn" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://samomqwvsrtp" path="res://Scenes/placeholer_map.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://wlpakgqngkkp" path="res://Scenes/dialogue_system.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://c1hlqm1m6u2ok" path="res://Scenes/pause_screen.tscn" id="4_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://ccpcmu7vngwhg" path="res://Scenes/detection_area.tscn" id="4_3dryh"]
-[ext_resource type="Script" uid="uid://di1tt4nn4xsaq" path="res://Scripts/game_manager.gd" id="5_wowpa"]
 [ext_resource type="Shader" uid="uid://d0g1n8jcxe5br" path="res://Assets/Shaders/game.gdshader" id="6_i6g32"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_h4fw4"]
@@ -30,27 +30,7 @@ shader_parameter/viewport_size_override = Vector2(0, 0)
 
 [node name="Player" parent="." unique_id=1857629509 instance=ExtResource("1_ebmjs")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1698057082]
-
-[node name="Dialogue System" parent="CanvasLayer" unique_id=441250200 instance=ExtResource("3_wrm1d")]
-visible = false
-position = Vector2(177, 540)
-scale = Vector2(2, 2)
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1374810301]
-visible = false
-offset_left = 363.0
-offset_top = 261.0
-offset_right = 610.0
-offset_bottom = 349.0
-theme_override_font_sizes/font_size = 64
-text = "PAUSED"
-
 [node name="Detect Area" parent="." unique_id=55378902 instance=ExtResource("4_3dryh")]
-
-[node name="Game Manager" type="Node2D" parent="." unique_id=72941995]
-process_mode = 3
-script = ExtResource("5_wowpa")
 
 [node name="Post Process" type="CanvasLayer" parent="." unique_id=623269385]
 
@@ -69,3 +49,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1698057082]
+
+[node name="Pause Screen" parent="CanvasLayer" unique_id=424207461 instance=ExtResource("4_1l0tm")]
+visible = false
+z_index = 4096
+
+[node name="Dialogue System" parent="CanvasLayer" unique_id=441250200 instance=ExtResource("3_wrm1d")]
+visible = false
+position = Vector2(177, 540)
+scale = Vector2(2, 2)
