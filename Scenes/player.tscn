@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cambu34yascfb" path="res://Assets/Sprites/Player Sprites/_up walk.png" id="5_8erm5"]
 [ext_resource type="Script" uid="uid://q5rdg8k30kw" path="res://Scripts/walk State.gd" id="5_x3wgy"]
 [ext_resource type="PackedScene" uid="uid://8kp5muk2y7jw" path="res://Scenes/flashlight.tscn" id="9_f1ek2"]
+[ext_resource type="Script" uid="uid://dds21u8j6hm6" path="res://Scenes/interact.gd" id="11_ukyrk"]
 [ext_resource type="Script" uid="uid://d0jwe3uxbvaih" path="res://Scripts/player_manager.gd" id="12_pu2lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
@@ -305,6 +306,7 @@ script = ExtResource("4_fkybt")
 script = ExtResource("5_x3wgy")
 
 [node name="Interact" type="Node2D" parent="State Machine" unique_id=510907701]
+script = ExtResource("11_ukyrk")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=142287849]
 zoom = Vector2(2, 2)
